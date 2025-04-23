@@ -1,23 +1,52 @@
+# 🌾 Crop Yield Prediction Using Machine Learning
 
-# Crop Seed Estimation from Aerial Image Analysis (Mar 2025 – Present)
+This project predicts crop yield (in Quintals/acre) using environmental and nutrient-based features like rainfall, temperature, and macronutrients (NPK). The goal is to understand which factors most affect yield and build accurate models.
 
-This project focuses on estimating the number of crop seeds required for a field using aerial images. The goal is to develop an image-processing model that utilizes machine learning techniques to predict seed count based on the land area and soil characteristics.
+## 📊 Dataset
+- **Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/yaminh/crop-yield-prediction)
+- **Features:** Rainfall, Temperature, Fertilizer, Nitrogen, Phosphorous, Potassium
 
-## Features
-- **Aerial Image Analysis**: Uses OpenCV-based image segmentation techniques to extract features from field images.
-- **Seed Count Prediction**: Applies machine learning models to predict the number of seeds based on land area and other field characteristics.
-- **Ongoing Improvements**: Experimenting with CNN-based feature extraction to improve model accuracy.
+## 🔧 Workflow
 
-## Data
-The data includes aerial images of fields with annotations for land area and soil characteristics. The target is to predict the number of crop seeds required for each field.
+1. **Data Cleaning**
+   - Handled invalid values (e.g., `':'` in temperature)
+   - Converted columns to correct data types
+   - Handled missing values using median imputation
 
-## Technologies Used
-- Python
-- OpenCV
-- Scikit-Learn
-- NumPy
+2. **Exploratory Data Analysis**
+   - Histograms for all features (bimodal patterns hinting at two crop types)
+   - Scatter plots to examine yield relationships
+   - Correlation heatmap
+   - Hypotheses: Two crop types (e.g., Rabi and Kharif) supported by clustering
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone <repo_url>
+3. **Model Building**
+   - **Decision Tree Regressor** (R² ~0.77)
+   - **Random Forest Regressor** (R² ~0.80, best model ✅)
+   - **Hyperparameter tuning** using GridSearchCV
+
+4. **Evaluation**
+   - MAE, MSE, RMSE
+   - Distribution plots of actual vs predicted values
+   - Feature importance plots
+
+## 📌 Key Insight
+> Temperature and rainfall are the most critical predictors of yield. Nutrients like Potassium have lower impact than expected.
+
+## 🔮 Future Improvements
+- Introduce soil pH and type if available
+- Use ensemble models like XGBoost or SVR for comparison
+
+## 💻 Tech Stack
+- Python, Pandas, Matplotlib, Seaborn, Scikit-learn
+
+---
+
+## 📸 Preview
+*(Insert EDA and model result screenshots if using GitHub)*
+
+---
+
+## 📬 Contact
+**Rajveer Pathak**  
+📧 [tarupa123@gmail.com](mailto:tarupa123@gmail.com)  
+🌐 [LinkedIn](https://www.linkedin.com/in/rajveerpathak/) | [GitHub](https://github.com/rajveerpathak1)
