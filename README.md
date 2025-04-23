@@ -41,10 +41,7 @@ This project predicts crop yield (in Quintals/acre) using environmental and nutr
 
 ---
 
-## 📸 Preview
-*(Insert EDA and model result screenshots if using GitHub)*
 
----
 
 ## 📬 Contact
 **Rajveer Pathak**  
